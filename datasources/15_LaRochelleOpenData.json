@@ -1,0 +1,9 @@
+{
+    "catalog": [
+	{
+	    "url": "http://localhost/test/LaRochelle/proxy.php",
+	    "name": "La Rochelle OpenData",
+	    "type": "wms-getCapabilities"
+	}
+    ]
+}

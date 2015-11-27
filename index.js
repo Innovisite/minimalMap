@@ -25,7 +25,7 @@ var version = require('./version');
 var configuration = {
     terriaBaseUrl: 'build/TerriaJS',
     cesiumBaseUrl: undefined, // use default
-    bingMapsKey: undefined, // use Cesium key
+    bingMapsKey: "AmVxlziFcoHT5hS-E1et4XZIG7vCfxxeVHH-SXlIqWLRPn649RLdlJWxjfIRuE6_", // use Cesium key
     proxyBaseUrl: 'proxy/',
     conversionServiceBaseUrl: 'convert',
     regionMappingDefinitionsUrl: 'data/regionMapping.json'
@@ -50,8 +50,8 @@ var AnimationViewModel = require('terriajs/lib/ViewModels/AnimationViewModel');
 var BingMapsSearchProviderViewModel = require('terriajs/lib/ViewModels/BingMapsSearchProviderViewModel');
 var BrandBarViewModel = require('terriajs/lib/ViewModels/BrandBarViewModel');
 var CatalogItemNameSearchProviderViewModel = require('terriajs/lib/ViewModels/CatalogItemNameSearchProviderViewModel');
-var createAustraliaBaseMapOptions = require('terriajs/lib/ViewModels/createAustraliaBaseMapOptions');
-var createGlobalBaseMapOptions = require('terriajs/lib/ViewModels/createGlobalBaseMapOptions');
+var createFrenchBaseMapOptions = require('terriajs/lib/ViewModels/createFrenchBaseMapOptions');
+var createGlobalBaseMapOptions = require('terriajs/lib/ViewModels/createGlobalBaseMapOptions', configuration.bingMapsKey);
 var createToolsMenuItem = require('terriajs/lib/ViewModels/createToolsMenuItem');
 var DataCatalogTabViewModel = require('terriajs/lib/ViewModels/DataCatalogTabViewModel');
 var DistanceLegendViewModel = require('terriajs/lib/ViewModels/DistanceLegendViewModel');
@@ -101,8 +101,8 @@ registerCatalogMembers();
 
 // Construct the TerriaJS application, arrange to show errors to the user, and start it up.
 var terria = new Terria({
-    appName: 'NationalMap',
-    supportEmail: 'data@pmc.gov.au',
+    appName: 'Innovisite',
+    supportEmail: 'support@innovisite.com',
     baseUrl: configuration.terriaBaseUrl,
     cesiumBaseUrl: configuration.cesiumBaseUrl,
     regionMappingDefinitionsUrl: configuration.regionMappingDefinitionsUrl,
@@ -136,8 +136,8 @@ terria.start({
     // Create the map/globe.
     TerriaViewer.create(terria, {
         developerAttribution: {
-            text: 'NICTA',
-            link: 'http://www.nicta.com.au'
+            text: 'Innovisite',
+            link: 'about.html'
         }
     });
 
@@ -145,11 +145,11 @@ terria.start({
     var ui = document.getElementById('ui');
 
     // Create the various base map options.
-    var australiaBaseMaps = createAustraliaBaseMapOptions(terria);
+    var frenchBaseMaps = createFrenchBaseMapOptions(terria);
     var globalBaseMaps = createGlobalBaseMapOptions(terria, configuration.bingMapsKey);
 
-    var allBaseMaps = australiaBaseMaps.concat(globalBaseMaps);
-    selectBaseMap(terria, allBaseMaps, 'Bing Maps Aerial with Labels', true);
+    var allBaseMaps = frenchBaseMaps.concat(globalBaseMaps);
+    selectBaseMap(terria, allBaseMaps, 'Carte Bing Satellite détaillée', true);
 
     // Create the Settings / Map panel.
     var settingsPanel = SettingsPanelViewModel.create({
@@ -163,8 +163,8 @@ terria.start({
     BrandBarViewModel.create({
         container: ui,
         elements: [
-            '<a target="_blank" href="about.html"><img src="images/NationalMap_Logo_RGB72dpi_REV_Blue text.png" height="50" alt="National Map" title="Version: ' + version + '" /></a>',
-            '<a target="_blank" href="http://www.gov.au/"><img src="images/AG-Rvsd-Stacked-Press.png" height="45" alt="Australian Government" /></a>'
+            '<a target="_blank" href="about.html"><img src="images/LogoInnovisitePlastic200px.png" height="50" alt="Innovisite" title="Version: ' + version + '" /></a>',
+            '<a target="_blank" href="donate.html"><img src="images/donate.png" height="40" alt="Comment nous aider" /></a>'
         ]
     });
 
@@ -176,8 +176,8 @@ terria.start({
             // Add a Tools menu that only appears when "tools=1" is present in the URL.
             createToolsMenuItem(terria, ui),
             new MenuBarItemViewModel({
-                label: 'Add data',
-                tooltip: 'Add your own data to the map.',
+                label: 'Ajouter des données',
+                tooltip: 'Ajouter vos propres données sur la carte.',
                 svgPath: svgPlus,
                 svgPathWidth: 11,
                 svgPathHeight: 12,
@@ -189,16 +189,16 @@ terria.start({
                 }
             }),
             new MenuBarItemViewModel({
-                label: 'Base Maps',
-                tooltip: 'Change the map mode (2D/3D) and base map.',
+                label: 'Fonds de carte',
+                tooltip: 'Changer le mode d\'affichage (2D/3D) et le fond de carte.',
                 svgPath: svgWorld,
                 svgPathWidth: 17,
                 svgPathHeight: 17,
                 observableToToggle: knockout.getObservable(settingsPanel, 'isVisible')
             }),
             new MenuBarItemViewModel({
-                label: 'Share',
-                tooltip: 'Share your map with others.',
+                label: 'Partager',
+                tooltip: 'Partager votre carte avec d\'autres personnes.',
                 svgPath: svgShare,
                 svgPathWidth: 11,
                 svgPathHeight: 13,
@@ -210,14 +210,14 @@ terria.start({
                 }
             }),
             new MenuBarItemViewModel({
-                label: 'Related Maps',
-                tooltip: 'View other maps in the NationalMap family.',
+                label: 'Autres cartes',
+                tooltip: 'Accéder à d\'autres environnment cartographique similaires.',
                 svgPath: svgRelated,
                 svgPathWidth: 14,
                 svgPathHeight: 13,
                 callback: function() {
                     PopupMessageViewModel.open(ui, {
-                        title: 'Related Maps',
+                        title: 'Autres cartes',
                         message: require('fs').readFileSync(__dirname + '/lib/Views/RelatedMaps.html', 'utf8'),
                         width: 600,
                         height: 430
@@ -225,8 +225,8 @@ terria.start({
                 }
             }),
             new MenuBarItemViewModel({
-                label: 'About',
-                tooltip: 'About National Map.',
+                label: 'A-propos',
+                tooltip: 'A-propos d\'Innovisite.',
                 svgPath: svgInfo,
                 svgPathWidth: 18,
                 svgPathHeight: 18,

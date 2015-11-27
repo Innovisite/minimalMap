@@ -1,18 +1,8 @@
 {
     "proxyDomains" : [
-        "nicta.com.au",
-        "gov.au",
-        "csiro.au",
-        "arcgis.com",
-        "argo.jcommops.org",
-        "www.abc.net.au",
-        "geoserver.aurin.org.au",
-        "mapsengine.google.com",
-        "s3-ap-southeast-2.amazonaws.com",
-        "adelaidecitycouncil.com",
-        "www.dptiapps.com.au",
-        "geoserver-123.aodn.org.au",
-        "geoserver.imos.org.au"
+        "download.data.grandlyon.com",
+        "wms.craig.fr",
+        "carto.georhonealpes.fr"
     ],
     "initializationUrls" : [
         "nm"
@@ -20,10 +10,10 @@
     "parameters": {
         "bingMapsKey": null,
         "googleUrlShortenerKey": null,
-        "googleAnalyticsKey": null,
+        "googleAnalyticsKey": "UA-56352870-1",
         "googleAnalyticsOptions": null,
         "disclaimer": {
-            "text": "Disclaimer: The NationalMap must not be used for navigation or precise spatial analysis",
+            "text": "Avertissement: Innovisite n'est pas dédié à la navigation et n'est pas responsable de la précision des données.",
             "url": "about.html"
         }
     }

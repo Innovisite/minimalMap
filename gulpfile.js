@@ -22,9 +22,9 @@ var watchify = require('watchify');
 var NpmImportPlugin = require('less-plugin-npm-import');
 var jsoncombine = require('gulp-jsoncombine');
 
-var appJSName = 'nationalmap.js';
-var appCssName = 'nationalmap.css';
-var specJSName = 'nationalmap-tests.js';
+var appJSName = 'innovisite.js';
+var appCssName = 'innovisite.css';
+var specJSName = 'innovisite-tests.js';
 var appEntryJSName = './index.js';
 var terriaJSSource = 'node_modules/terriajs/wwwroot';
 var terriaJSDest = 'wwwroot/build/TerriaJS';

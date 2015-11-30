@@ -1,4 +1,6 @@
 /**
+ * File modification done by Fabien Pélisson (fabien.pelisson@innovisite.com)
+ *
  * @license
  * Copyright(c) 2012-2015 National ICT Australia Limited (NICTA).
  *

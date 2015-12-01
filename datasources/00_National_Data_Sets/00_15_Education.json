@@ -1,0 +1,22 @@
+{
+  "catalog": [
+    {
+      "items": [
+        {
+          "items": [
+	      {
+		  "url": "http://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-enesr-rectorats-d-academies-vice-rectorats/download/?format=geojson&timezone=Europe/Berlin",
+		  "type": "geojson",
+		  "name": "Les rectorats d'academies et vice-rectorats"
+	      }
+          ],
+          "name": "Education",
+          "type": "group"
+        }
+      ],
+      "type": "group",
+      "isOpen": true,
+      "name": "National Data Sets"
+    }
+  ]
+}

@@ -9,7 +9,6 @@
   "corsDomains": [
     "corsproxy.com",
     "mapsengine.google.com",
-    "s3-ap-southeast-2.amazonaws.com",
-    "services.vuduciel.loire-atlantique.fr"
+    "s3-ap-southeast-2.amazonaws.com"
   ]
 }

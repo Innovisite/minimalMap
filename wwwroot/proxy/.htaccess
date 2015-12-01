@@ -1,0 +1,6 @@
+
+RewriteEngine On
+RewriteRule ^.*(https?)://?(.*)$ /map/proxy.php?__proto=$1&__url=$2 [QSA,NC,L]
+
+
+

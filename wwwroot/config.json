@@ -1,8 +1,14 @@
 {
     "proxyDomains" : [
-        "download.data.grandlyon.com",
-        "wms.craig.fr",
-        "carto.georhonealpes.fr"
+	"www.data.gouv.fr",
+	"services.vuduciel.loire-atlantique.fr",
+	"portail-sig.ville-larochelle.fr",
+	"download.data.grandlyon.com",
+	"wms.craig.fr",
+	"ids.craig.fr",
+	"carto.georhonealpes.fr",
+	"data.enseignementsup-recherche.gouv.fr",
+	"opendata.nicecotedazur.org"
     ],
     "initializationUrls" : [
         "nm"

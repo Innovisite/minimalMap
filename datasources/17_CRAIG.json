@@ -1,0 +1,25 @@
+{
+    "catalog": [
+	{
+	    "items": [
+		{
+		    "url": "http://wms.craig.fr/ortho",
+		    "name": "Ortho",
+		    "type": "wms-getCapabilities"
+		},
+		{
+		    "url": "http://wms.craig.fr/mnt",
+		    "name": "Terrains",
+		    "type": "wms-getCapabilities"
+		},
+		{
+		    "url": "http://ids.craig.fr/wxs/public/wms",
+		    "name": "Public",
+		    "type": "wms-getCapabilities"
+		}
+	    ],
+	    "type": "group",
+	    "name": "CRAIG"
+	}
+    ]
+}

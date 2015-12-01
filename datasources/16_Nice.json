@@ -1,0 +1,13 @@
+{
+    "catalog": [
+	{
+	    "url": "http://opendata.nicecotedazur.org/data",
+	    "filterQuery": [
+		"fq=+(res_format%3awms%20OR%20res_format%3aWMS%20OR%20res_format%3ageojson%20)"
+	    ],
+	    "includeGeoJson": true,
+	    "name": "Nice Cote d'Azur",
+	    "type": "ckan"
+	}
+    ]
+}

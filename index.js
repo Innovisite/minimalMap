@@ -27,10 +27,11 @@ var version = require('./version');
 var configuration = {
     terriaBaseUrl: 'build/TerriaJS',
     cesiumBaseUrl: undefined, // use default
-    bingMapsKey: "AmVxlziFcoHT5hS-E1et4XZIG7vCfxxeVHH-SXlIqWLRPn649RLdlJWxjfIRuE6_", // use Cesium key
+    bingMapsKey: "AmVxlziFcoHT5hS-E1et4XZIG7vCfxxeVHH-SXlIqWLRPn649RLdlJWxjfIRuE6_",
     proxyBaseUrl: 'proxy/',
     conversionServiceBaseUrl: 'convert',
-    regionMappingDefinitionsUrl: 'data/regionMapping.json'
+    regionMappingDefinitionsUrl: 'data/regionMapping.json',
+    rapanuiKey: "b7b7add2f37500aef52ff8b8677da9ba"
 };
 
 // Check browser compatibility early on.
@@ -207,7 +208,8 @@ terria.start({
                 callback: function() {
                     SharePopupViewModel.open({
                         container: ui,
-                        terria: terria
+                        terria: terria,
+			rapanuiKey: configuration.rapanuiKey
                     });
                 }
             }),

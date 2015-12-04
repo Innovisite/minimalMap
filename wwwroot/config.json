@@ -12,8 +12,8 @@
 	"data.bordeaux-metropole.fr",
 	"donneespubliques.meteofrance.fr",
 	"geobretagne.fr",
-	"tile.geobretagne.fr",
-	"osm.geobretagne.fr"
+	"ows.region-bretagne.fr",
+	"geo.brest-metropole.fr"
     ],
     "initializationUrls" : [
         "nm"

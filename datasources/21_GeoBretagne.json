@@ -23,18 +23,18 @@
 		    "type": "wms-getCapabilities"
 		},
 		{
-		    "url": "http://tile.geobretagne.fr/gwc02/service/wms",
-		    "name": "Tuiles",
+		    "url": "http://geobretagne.fr/geoserver/ign/wms",
+		    "name": "IGN",
 		    "type": "wms-getCapabilities"
 		},
 		{
-		    "url": "http://osm.geobretagne.fr/gwc01/service/wms",
+		    "url": "http://geobretagne.fr/osm/wms",
 		    "name": "OSM",
 		    "type": "wms-getCapabilities"
 		},
 		{
 		    "url": "http://geobretagne.fr/geoserver/dreal_b/wms",
-		    "name": "BD Carto",
+		    "name": "DREAL",
 		    "type": "wms-getCapabilities"
 		},
 		{
@@ -48,8 +48,83 @@
 		    "type": "wms-getCapabilities"
 		},
 		{
-		    "url": "http://geobretagne.fr/geoserver/ddtm29/wms",
-		    "name": "DDTM du Finistère",
+		    "type": "group",
+		    "name": "DDTM",
+		    "items": [
+			{
+			    "url": "http://geobretagne.fr/geoserver/ddtm29/wms",
+			    "name": "Finistère",
+			    "type": "wms-getCapabilities"
+			},
+			{
+			    "url": "http://geobretagne.fr/geoserver/ddtm35/wms",
+			    "name": "Ille et Vilaine",
+			    "type": "wms-getCapabilities"
+			}
+		    ]
+		},
+		{
+		    "url": "http://geobretagne.fr/geoserver/concarneaucornouaille/ows",
+		    "name": "CCA",
+		    "type": "wms-getCapabilities"
+		},
+		{
+		    "url": "http://geobretagne.fr/geoserver/direccte/wms",
+		    "name": "DIRECCTE",
+		    "type": "wms-getCapabilities"
+		},
+		{
+		    "url": "http://geobretagne.fr/geoserver/sdis29/ows",
+		    "name": "SDIS",
+		    "type": "wms-getCapabilities"
+		},
+		{
+		    "url": "http://geobretagne.fr/geoserver/crcbs/ows",
+		    "name": "CRCBS",
+		    "type": "wms-getCapabilities"
+		},
+		{
+		    "url": "http://ows.region-bretagne.fr/geoserver/rb/wms",
+		    "name": "Région Bretagne",
+		    "type": "wms-getCapabilities"
+		},
+		{
+		    "url": "http://geobretagne.fr/geoserver/bretagneenvironnement/ows",
+		    "name": "GIP Bretagne Environnement",
+		    "type": "wms-getCapabilities"
+		},
+		{
+		    "url": "http://geo.brest-metropole.fr/arcgis/services/public/GPB_ESP/MapServer/WMSServer",
+		    "name": "Brest métropole",
+		    "type": "wms-getCapabilities"
+		},
+		{
+		    "url": "http://geobretagne.fr/geoserver/pnrgm/ows",
+		    "name": "Parc Naturel Régional du Golfe du Morbihan",
+		    "type": "wms-getCapabilities"
+		},
+		{
+		    "url": "http://geobretagne.fr/geoserver/alti/ows",
+		    "name": "Altimétrie",
+		    "type": "wms-getCapabilities"
+		},
+		{
+		    "url": "http://geobretagne.fr/geoserver/cadastre/wms",
+		    "name": "Cadastre",
+		    "type": "wms-getCapabilities"
+		},
+		{   "url": "http://geobretagne.fr/geoserver/cg22/ows",
+		    "name": "Cartographie Côtes d'Armor",
+		    "type": "wms-getCapabilities"
+		},
+		{
+		    "url": "http://geobretagne.fr/geoserver/photo/ows",
+		    "name": "Photographies aériennes",
+		    "type": "wms-getCapabilities"
+		},
+		{
+		    "url": "http://geobretagne.fr/geoserver/insee/wms",
+		    "name": "INSEE",
 		    "type": "wms-getCapabilities"
 		}
 	    ],

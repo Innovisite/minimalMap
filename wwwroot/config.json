@@ -8,7 +8,12 @@
 	"ids.craig.fr",
 	"carto.georhonealpes.fr",
 	"data.enseignementsup-recherche.gouv.fr",
-	"opendata.nicecotedazur.org"
+	"opendata.nicecotedazur.org",
+	"data.bordeaux-metropole.fr",
+	"donneespubliques.meteofrance.fr",
+	"geobretagne.fr",
+	"tile.geobretagne.fr",
+	"osm.geobretagne.fr"
     ],
     "initializationUrls" : [
         "nm"

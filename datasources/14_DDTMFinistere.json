@@ -1,9 +1,0 @@
-{
-    "catalog": [
-	{
-	    "url": "http://geobretagne.fr/geoserver/ddtm29/wms",
-	    "name": "DDTM du Finistère",
-	    "type": "wms-getCapabilities"
-	}
-    ]
-}

@@ -1,0 +1,60 @@
+{
+    "catalog": [
+	{
+	    "items": [
+		{
+		    "url": "http://geobretagne.fr/geoserver/rennesmetropole/ows",
+		    "name": "Rennes",
+		    "type": "wms-getCapabilities"
+		},
+		{
+		    "url": "http://geobretagne.fr/geoserver/paysfouesnantais/ows",
+		    "name": "CC Pays Fouesnant",
+		    "type": "wms-getCapabilities"
+		},
+		{
+		    "url": "http://geobretagne.fr/geoserver/paysaubigne/ows",
+		    "name": "CC Pays d'Aubigné",
+		    "type": "wms-getCapabilities"
+		},
+		{
+		    "url": "http://geobretagne.fr/geoserver/coeuremeraude/ows",
+		    "name": "Coeur Emraude",
+		    "type": "wms-getCapabilities"
+		},
+		{
+		    "url": "http://tile.geobretagne.fr/gwc02/service/wms",
+		    "name": "Tuiles",
+		    "type": "wms-getCapabilities"
+		},
+		{
+		    "url": "http://osm.geobretagne.fr/gwc01/service/wms",
+		    "name": "OSM",
+		    "type": "wms-getCapabilities"
+		},
+		{
+		    "url": "http://geobretagne.fr/geoserver/dreal_b/wms",
+		    "name": "BD Carto",
+		    "type": "wms-getCapabilities"
+		},
+		{
+		    "url": "http://geobretagne.fr/geoserver/draaf/wms",
+		    "name": "DRAAF",
+		    "type": "wms-getCapabilities"
+		},
+		{
+		    "url": "http://geobretagne.fr/geoserver/chambreagriculture/ows",
+		    "name": "Chambre Agriculture",
+		    "type": "wms-getCapabilities"
+		},
+		{
+		    "url": "http://geobretagne.fr/geoserver/ddtm29/wms",
+		    "name": "DDTM du Finistère",
+		    "type": "wms-getCapabilities"
+		}
+	    ],
+	    "type": "group",
+	    "name": "Géo Bretagne"
+	}
+    ]
+}

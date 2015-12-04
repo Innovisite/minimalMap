@@ -1,0 +1,11 @@
+{
+    "catalog": [
+	{
+	    "url": "http://data.bordeaux-metropole.fr/wms",
+	    "name": "Bordeaux Métropole",
+	    "type": "wms-getCapabilities",
+	    "parameters": { "key": "368C12ZK5O" },
+	    "extra": "key=368C12ZK5O"
+	}
+    ]
+}

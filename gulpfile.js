@@ -61,11 +61,11 @@ gulp.task('build', ['build-css', 'merge-datasources', 'build-app', 'build-specs'
 });
 
 gulp.task('release-app', ['prepare'], function() {
-    return build(appJSName, appEntryJSName, true);
+    return build(appJSName, appEntryJSName, false);
 });
 
 gulp.task('release-specs', ['prepare'], function() {
-    return build(specJSName, glob.sync(testGlob), true);
+    return build(specJSName, glob.sync(testGlob), false);
 });
 
 gulp.task('release', ['build-css', 'merge-datasources', 'release-app', 'release-specs'], function() {
@@ -155,6 +155,22 @@ gulp.task('merge-catalog', [], function() {
 gulp.task('merge-datasources', ['merge-catalog']);
 
 gulp.task('default', ['lint', 'build']);
+
+gulp.task('compress', ['compress-fr', 'compress-en']);
+
+gulp.task('compress-fr', function() {
+    return compress('fr');
+});
+
+gulp.task('compress-en', function() {
+    return compress('en');
+});
+
+function compress(lang) {
+    return gulp.src('./wwwroot/build/' + lang + '/innovisite.js')
+    .pipe(uglify({preserveComments: 'some', mangle: true, compress: true}))
+    .pipe(gulp.dest('./wwwroot/build/' + lang + '/'));
+};
 
 function bundle(name, bundler, minify, catchErrors) {
     // Get a version string from "git describe".

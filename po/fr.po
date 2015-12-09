@@ -1,0 +1,25 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: fr\n"
+
+#: innovisite.js
+msgid "Clicking on a map below will open it in a separate window or tab."
+msgstr "En cliquant sur une des carte listée ci-dessous, une nouvelle fenêtre ou un nouvel onglet va s'ouvrir."
+
+msgid "Zoom To"
+msgstr "Zoomer Vers"
+
+msgid "Remove"
+msgstr "Supprimer"
+
+msgid "Remove All"
+msgstr "Tout Supprimer"

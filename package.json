@@ -48,7 +48,8 @@
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
     "vinyl-transform": "^1.0.0",
-    "watchify": "^3.2.0"
+    "watchify": "^3.2.0",
+    "gulp-gettext-static-tags": "^0.0.1"
   },
   "browserify": {
     "transform": [

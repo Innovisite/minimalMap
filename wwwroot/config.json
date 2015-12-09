@@ -13,7 +13,10 @@
 	"donneespubliques.meteofrance.fr",
 	"geobretagne.fr",
 	"ows.region-bretagne.fr",
-	"geo.brest-metropole.fr"
+	"geo.brest-metropole.fr",
+	"extranet.parcnational.fr",
+	"datacarto.geobourgogne.fr",
+	"ids.pigma.org"
     ],
     "initializationUrls" : [
         "nm"

@@ -1,0 +1,50 @@
+{
+    "catalog": [
+	{
+	    "items": [
+		{
+		    "url": "http://www.innovisite.com/data/Auvergne/terrain/tiles",
+		    "name": "Puy de Dome 50cm",
+		    "dataCustodian": "<a href='http://www.innovisite.com'>[Innovisite]</a> pour le format 3D spécifique permettant le rendu WebGL et le <a href='http://www.craig.fr/'>[CRAIG]</a> pour les sources de données brutes.",
+		    "description": "Terrain 3D d'un relevé LIDAR en très haute résolution. Pour visualiser ce terrain vous devez utiliser le mode de visualisation 3D à partir du menu <i>Fonds de carte</i>. Les données brutes proviennent du Centre Régional Auvergnat de l'Information Géographique (CRAIG). C'est un MNT à très haute résolution dépourvu de végétation à 50cm de résolution et 10cm de précision planimétrique et altimétrique (cf projet <a href='http://www.craig.fr/groupes/72-lidar-site-du-puy-de-d%C3%B4me'>LIDAVERNE</a>). Vous pouvez également activer les orthophotographies 10cm disponibles dans le catalogue CRAIG et ainsi avoir une visualisation bluffante du site.",
+		    "type": "cesium-terrain",
+		    "dataUrlType": "indirect",
+		    "rectangle": [
+			"2.904",
+			"45.737",
+			"3.094",
+			"45.819"
+		    ],
+		    "info": [
+			{
+			    "name": "Licence",
+			    "content": "[Licence Ouverte Etalab](https://www.data.gouv.fr/fr/faq/)"
+			}
+		    ]
+		},
+		{
+		    "url": "http://www.innovisite.com/data/Nice/terrain/tiles",
+		    "name": "Nice Côte d'Azur 5m",
+		    "dataCustodian": "<a href='http://www.innovisite.com'>[Innovisite]</a> pour le format 3D spécifique permettant le rendu WebGL et <a href='http://opendata.nicecotedazur.org/'>[OpenData Nice Côte d'Azur]</a> pour les sources de données brutes.",
+		    "type": "cesium-terrain",
+		    "dataUrlType": "indirect",
+		    "rectangle": [
+			"2.904",
+			"45.737",
+			"3.094",
+			"45.819"
+		    ],
+		    "info": [
+			{
+			    "name": "Licence",
+			    "content": "[Licence Ouverte](http://opendata.nicecotedazur.org/data/pdf/licence_ouverte.pdf)"
+			}
+		    ]
+
+		}
+	    ],
+	    "type": "group",
+	    "name": "MNT Terrain 3D"
+	}
+    ]
+}

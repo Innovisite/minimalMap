@@ -19,7 +19,7 @@
 		},
 		{
 		    "url": "http://geobretagne.fr/geoserver/coeuremeraude/ows",
-		    "name": "Coeur Emraude",
+		    "name": "Coeur Emeraude",
 		    "type": "wms-getCapabilities"
 		},
 		{

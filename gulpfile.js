@@ -21,6 +21,7 @@ var source = require('vinyl-source-stream');
 var watchify = require('watchify');
 var NpmImportPlugin = require('less-plugin-npm-import');
 var jsoncombine = require('gulp-jsoncombine');
+var translatePlugin = require('gulp-gettext-static-tags');
 
 var appJSName = 'innovisite.js';
 var appCssName = 'innovisite.css';
@@ -55,7 +56,9 @@ gulp.task('build-css', function() {
         .pipe(gulp.dest('./wwwroot/build/'));
 });
 
-gulp.task('build', ['build-css', 'merge-datasources', 'build-app', 'build-specs']);
+gulp.task('build', ['build-css', 'merge-datasources', 'build-app', 'build-specs'], function() {
+    return translate('./wwwroot/build/' + appJSName);
+});
 
 gulp.task('release-app', ['prepare'], function() {
     return build(appJSName, appEntryJSName, true);
@@ -65,7 +68,9 @@ gulp.task('release-specs', ['prepare'], function() {
     return build(specJSName, glob.sync(testGlob), true);
 });
 
-gulp.task('release', ['build-css', 'merge-datasources', 'release-app', 'release-specs']);
+gulp.task('release', ['build-css', 'merge-datasources', 'release-app', 'release-specs'], function() {
+    return translate('./wwwroot/build/' + appJSName);
+});
 
 gulp.task('watch-app', ['prepare'], function() {
     return watch(appJSName, appEntryJSName, false);
@@ -87,7 +92,7 @@ gulp.task('watch-datasource-catalog', ['merge-catalog'], function() {
     return gulp.watch('datasources/*.json', [ 'merge-catalog' ]);
 });
 
-gulp.task('watch-datasources', ['watch-datasource-groups','watch-datasource-catalog']);
+gulp.task('watch-datasources', ['watch-datasource-catalog']);
 
 gulp.task('watch-terriajs', ['prepare-terriajs'], function() {
     return gulp.watch(terriaJSSource + '/**', [ 'prepare-terriajs' ]);
@@ -131,7 +136,7 @@ gulp.task('merge-groups', function() {
     .pipe(gulp.dest("./datasources"));
 });
 
-gulp.task('merge-catalog', ['merge-groups'], function() {
+gulp.task('merge-catalog', [], function() {
     var jsonspacing=0;
     return gulp.src("./datasources/*.json")
         .pipe(jsoncombine("nm.json", function(data) {
@@ -147,7 +152,7 @@ gulp.task('merge-catalog', ['merge-groups'], function() {
     .pipe(gulp.dest("./wwwroot/init"));
 });
 
-gulp.task('merge-datasources', ['merge-catalog', 'merge-groups']);
+gulp.task('merge-datasources', ['merge-catalog']);
 
 gulp.task('default', ['lint', 'build']);
 
@@ -194,6 +199,12 @@ function bundle(name, bundler, minify, catchErrors) {
         .pipe(gulp.dest('wwwroot/build'));
 
     return result;
+}
+
+function translate(filename) {
+    return gulp.src(filename)
+	.pipe(translatePlugin('po/*.po'))
+	.pipe(gulp.dest('./wwwroot/build'));
 }
 
 function build(name, files, minify) {

@@ -51,6 +51,8 @@ var GoogleAnalytics = require('terriajs/lib/Core/GoogleAnalytics');
 var AddDataPanelViewModel = require('terriajs/lib/ViewModels/AddDataPanelViewModel');
 var AnimationViewModel = require('terriajs/lib/ViewModels/AnimationViewModel');
 var BingMapsSearchProviderViewModel = require('terriajs/lib/ViewModels/BingMapsSearchProviderViewModel');
+var NominatimSearchProviderViewModel = require('terriajs/lib/ViewModels/NominatimSearchProviderViewModel');
+var DataGouvFrSearchProviderViewModel = require('terriajs/lib/ViewModels/DataGouvFrSearchProviderViewModel');
 var BrandBarViewModel = require('terriajs/lib/ViewModels/BrandBarViewModel');
 var CatalogItemNameSearchProviderViewModel = require('terriajs/lib/ViewModels/CatalogItemNameSearchProviderViewModel');
 var createFrenchBaseMapOptions = require('terriajs/lib/ViewModels/createFrenchBaseMapOptions');
@@ -293,6 +295,12 @@ terria.start({
                     new CatalogItemNameSearchProviderViewModel({
                         terria: terria
                     }),
+		    new DataGouvFrSearchProviderViewModel({
+			terria: terria
+		    }),
+		    new NominatimSearchProviderViewModel({
+			terria: terria
+		    }),
                     new BingMapsSearchProviderViewModel({
                         terria: terria,
                         key: configuration.bingMapsKey

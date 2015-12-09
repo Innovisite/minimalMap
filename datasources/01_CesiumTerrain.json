@@ -29,15 +29,35 @@
 		    "type": "cesium-terrain",
 		    "dataUrlType": "indirect",
 		    "rectangle": [
-			"2.904",
-			"45.737",
-			"3.094",
-			"45.819"
+			"6.396",
+			"43.628",
+			"7.912",
+			"44.304"
 		    ],
 		    "info": [
 			{
 			    "name": "Licence",
 			    "content": "[Licence Ouverte](http://opendata.nicecotedazur.org/data/pdf/licence_ouverte.pdf)"
+			}
+		    ]
+
+		},
+		{
+		    "url": "http://www.innovisite.com/data/Lyon/terrain/tiles",
+		    "name": "Grand Lyon 10m",
+		    "dataCustodian": "<a href='http://www.innovisite.com'>[Innovisite]</a> pour le format 3D spécifique permettant le rendu WebGL et <a href='http://http://data.grandlyon.com/'>[Data Grand Lyon]</a> pour les sources de données brutes.",
+		    "type": "cesium-terrain",
+		    "dataUrlType": "indirect",
+		    "rectangle": [
+			"4.321",
+			"45.511",
+			"5.382",
+			"45.969"
+		    ],
+		    "info": [
+			{
+			    "name": "Licence",
+			    "content": "[Licence Ouverte](https://download.data.grandlyon.com/files/grandlyon/LicenceOuverte.pdf)"
 			}
 		    ]
 

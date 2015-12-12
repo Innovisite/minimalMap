@@ -23,3 +23,9 @@ msgstr "Supprimer"
 
 msgid "Remove All"
 msgstr "Tout Supprimer"
+
+msgid "NOLOC_FOUND"
+msgstr "Désolé, aucun lieu n\\'a été trouvé."
+
+msgid "ERR_SEARCH"
+msgstr "Une erreur est survenue pendant la recherche. Veuillez vérifier votre connexion internet ou réessayer plus tard."

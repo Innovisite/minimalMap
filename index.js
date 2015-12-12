@@ -64,7 +64,7 @@ var DragDropViewModel = require('terriajs/lib/ViewModels/DragDropViewModel');
 var ExplorerPanelViewModel = require('terriajs/lib/ViewModels/ExplorerPanelViewModel');
 var FeatureInfoPanelViewModel = require('terriajs/lib/ViewModels/FeatureInfoPanelViewModel');
 var GazetteerSearchProviderViewModel = require('terriajs/lib/ViewModels/GazetteerSearchProviderViewModel');
-var GoogleUrlShortener = require('terriajs/lib/Models/GoogleUrlShortener');
+var InoUrlShortener = require('terriajs/lib/Models/InoUrlShortenerKey');
 var LocationBarViewModel = require('terriajs/lib/ViewModels/LocationBarViewModel');
 var MenuBarItemViewModel = require('terriajs/lib/ViewModels/MenuBarItemViewModel');
 var MenuBarViewModel = require('terriajs/lib/ViewModels/MenuBarViewModel');
@@ -127,7 +127,7 @@ terria.start({
     applicationUrl: window.location,
     configUrl: 'config.json',
     defaultTo2D: isCommonMobilePlatform(),
-    urlShortener: new GoogleUrlShortener({
+    urlShortener: new InoUrlShortener({
         terria: terria
     })
 }).otherwise(function(e) {
@@ -299,7 +299,8 @@ terria.start({
 			terria: terria
 		    }),
 		    new NominatimSearchProviderViewModel({
-			terria: terria
+			terria: terria,
+			countryCodes: "fr"
 		    }),
                     new BingMapsSearchProviderViewModel({
                         terria: terria,

@@ -21,7 +21,7 @@ var source = require('vinyl-source-stream');
 var watchify = require('watchify');
 var NpmImportPlugin = require('less-plugin-npm-import');
 var jsoncombine = require('gulp-jsoncombine');
-var translatePlugin = require('gulp-gettext-static-tags');
+var gulpTranslate = require('gulp-gettext-static-tags');
 
 var appJSName = 'innovisite.js';
 var appCssName = 'innovisite.css';
@@ -30,6 +30,7 @@ var appEntryJSName = './index.js';
 var terriaJSSource = 'node_modules/terriajs/wwwroot';
 var terriaJSDest = 'wwwroot/build/TerriaJS';
 var testGlob = './test/**/*.js';
+var lang = 'fr';
 
 // Create the build directory, because browserify flips out if the directory that might
 // contain an existing source map doesn't exist.
@@ -56,21 +57,17 @@ gulp.task('build-css', function() {
         .pipe(gulp.dest('./wwwroot/build/'));
 });
 
-gulp.task('build', ['build-css', 'merge-datasources', 'build-app', 'build-specs'], function() {
-    return translate('./wwwroot/build/' + appJSName);
-});
+gulp.task('build', ['build-css', 'merge-datasources', 'build-app', 'build-specs']);
 
 gulp.task('release-app', ['prepare'], function() {
-    return build(appJSName, appEntryJSName, false);
+    return build(appJSName, appEntryJSName, true);
 });
 
 gulp.task('release-specs', ['prepare'], function() {
-    return build(specJSName, glob.sync(testGlob), false);
+    return build(specJSName, glob.sync(testGlob), true);
 });
 
-gulp.task('release', ['build-css', 'merge-datasources', 'release-app', 'release-specs'], function() {
-    return translate('./wwwroot/build/' + appJSName);
-});
+gulp.task('release', ['build-css', 'merge-datasources', 'release-app', 'release-specs']);
 
 gulp.task('watch-app', ['prepare'], function() {
     return watch(appJSName, appEntryJSName, false);
@@ -156,22 +153,6 @@ gulp.task('merge-datasources', ['merge-catalog']);
 
 gulp.task('default', ['lint', 'build']);
 
-gulp.task('compress', ['compress-fr', 'compress-en']);
-
-gulp.task('compress-fr', function() {
-    return compress('fr');
-});
-
-gulp.task('compress-en', function() {
-    return compress('en');
-});
-
-function compress(lang) {
-    return gulp.src('./wwwroot/build/' + lang + '/innovisite.js')
-    .pipe(uglify({preserveComments: 'some', mangle: true, compress: true}))
-    .pipe(gulp.dest('./wwwroot/build/' + lang + '/'));
-};
-
 function bundle(name, bundler, minify, catchErrors) {
     // Get a version string from "git describe".
     var version = spawnSync('git', ['describe']).stdout.toString().trim();
@@ -185,42 +166,35 @@ function bundle(name, bundler, minify, catchErrors) {
     // Combine main.js and its dependencies into a single file.
     // The poorly-named "debug: true" causes Browserify to generate a source map.
     var result = bundler.bundle();
-
+	
     if (catchErrors) {
         // Display errors to the user, and don't let them propagate.
         result = result.on('error', function(e) {
-            gutil.log('Browserify Error', e.message);
+	    gutil.log('Browserify Error', e.message);
         });
     }
-
+    
     result = result
         .pipe(source(name))
         .pipe(buffer());
-
+    
+    result = result
+	.pipe(gulpTranslate('po/' + lang + '.po'));
+    
     if (minify) {
         // Minify the combined source.
         // sourcemaps.init/write maintains a working source map after minification.
         // "preserveComments: 'some'" preserves JSDoc-style comments tagged with @license or @preserve.
         result = result
-            .pipe(sourcemaps.init({ loadMaps: true }))
-            .pipe(uglify({preserveComments: 'some', mangle: true, compress: true}))
-            .pipe(sourcemaps.write());
+	    .pipe(sourcemaps.init({ loadMaps: true }))
+	    .pipe(uglify({preserveComments: 'some', mangle: true, compress: true}))
+	    .pipe(sourcemaps.write());
     }
-
+    
     result = result
-        // Extract the embedded source map to a separate file.
-        .pipe(transform(function () { return exorcist('wwwroot/build/' + name + '.map'); }))
-
-        // Write the finished product.
-        .pipe(gulp.dest('wwwroot/build'));
-
+        .pipe(transform(function () { return exorcist('wwwroot/build/' + lang + '/' + name + '.map'); }))	
+        .pipe(gulp.dest('wwwroot/build/' + lang));
     return result;
-}
-
-function translate(filename) {
-    return gulp.src(filename)
-	.pipe(translatePlugin('po/*.po'))
-	.pipe(gulp.dest('./wwwroot/build'));
 }
 
 function build(name, files, minify) {

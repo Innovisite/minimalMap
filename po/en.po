@@ -11,4 +11,11 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "Language: en\n"
 
+msgid "NOLOC_FOUND"
+msgstr "Sorry, no locations match your search query."
+
+msgid "ERR_SEARCH"
+msgstr "An error occurred while searching.  Please check your internet connection or try again later."
+
+
 

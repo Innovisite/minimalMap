@@ -1,0 +1,25 @@
+{
+    "catalog": [
+	{
+	    "type": "group",
+	    "name": "OpenDataGouv",
+	    "items": [
+		{
+		    "url": "http://www.innovisite.com/data/OpenDataGouv/listeMuseesFrance.json",
+		    "dataUrl": "https://www.data.gouv.fr/s/resources/liste-et-localisation-des-musees-de-france/20150415-175415/ListedesmuseesdeFrance_.ods",
+		    "name": "Liste des Musées 2014",
+		    "dataCustodian": "<a href='http://www.innovisite.com'>[Innovisite]</a> pour le format GeoJson, <a href='http://nominatim.openstreetmap.org'>[Nominatim]</a>, <a href='https://adresse.data.gouv.fr/api/'>[API ADRESSE]</a> pour le Géocoding et <a href='https://www.data.gouv.fr/fr/datasets/liste-et-localisation-des-musees-de-france/'>[OpenDataGouv]</a> pour la source.",
+		    "description": "Liste et géoréférencement des musées en France à partir du fichier en OpenDocument Format (ods). Tout d'abord le fichier à été transformé en CSV puis les colonnes faisant références à l'adresse ont été utilisées pour retrouver la position cartographique grâce aux API de Nominatim et d'adresse.data.gouv.fr.",
+		    "type": "geojson",
+		    "info": [
+			{ 
+			    "name": "Licence",
+			    "content": "[Licence Ouverte Etalab](https://www.etalab.gouv.fr/licence-ouverte-open-licence)"			    
+			}
+		    ]
+		}
+	    ]
+	}
+    ]
+}
+

@@ -1,0 +1,9 @@
+{
+    "catalog": [
+	{
+	    "url": "http://carto.atlasante.fr/cgi-bin/mapserv",
+	    "name": "atlaSanté",
+	    "type": "wms-getCapabilities"
+	}
+    ]
+}

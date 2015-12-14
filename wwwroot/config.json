@@ -16,7 +16,11 @@
 	"geo.brest-metropole.fr",
 	"extranet.parcnational.fr",
 	"datacarto.geobourgogne.fr",
-	"ids.pigma.org"
+	"ids.pigma.org",
+	"geoservices.brgm.fr",
+	"services.sandre.eaufrance.fr",
+	"gesteau.oieau.fr",
+	"carto.atlasante.fr"
     ],
     "initializationUrls" : [
         "nm"

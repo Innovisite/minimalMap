@@ -1,0 +1,20 @@
+{
+    "catalog": [
+	{
+	    "type": "group",
+	    "name": "SANDRE",
+	    "items": [
+		{
+		    "url": "http://services.sandre.eaufrance.fr/geo/zonage",
+		    "name": "Zonage",
+		    "type": "wms-getCapabilities"
+		},
+		{
+		    "url": "http://services.sandre.eaufrance.fr/geo/ouvrage",
+		    "name": "Ouvrage",
+		    "type": "wms-getCapabilities"
+		}
+	    ]
+	}
+    ]
+}

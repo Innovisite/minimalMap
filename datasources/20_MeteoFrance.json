@@ -1,0 +1,106 @@
+{
+    "catalog": [
+	{
+	    "items": [
+		{
+		    "layers": "GEOPOTENTIAL_HEIGHT",
+		    "url": "https://donneespubliques.meteofrance.fr/inspire/services/ArpegeWMS",
+		    "name": "Altitude géopotentielle",
+		    "type": "wms",
+		    "parameters": { "token": "__5_NT0ie9i8DBJamMFl8qHVjRvyP52eYGRy3oeZjBNSg__",
+				    "styles": "Z__ISOBARIC__NO_SHADING",
+				    "version": "1.3.0",
+				    "CRS": "EPSG:4326"
+				  },
+		    "extra": "token=__5_NT0ie9i8DBJamMFl8qHVjRvyP52eYGRy3oeZjBNSg__"
+		},
+		{
+		    "type": "group",
+		    "name": "Humidité relative",
+		    "items": [
+			{
+			    "layers": "RELATIVE_HUMIDITY",
+			    "url": "https://donneespubliques.meteofrance.fr/inspire/services/ArpegeWMS",
+			    "name": "Isolignes",
+			    "type": "wms",
+			    "parameters": { "token": "__5_NT0ie9i8DBJamMFl8qHVjRvyP52eYGRy3oeZjBNSg__",
+					    "styles": "HU__ISOBARIC__NO_SHADING",
+					    "version": "1.3.0",
+					    "CRS": "EPSG:4326"
+					  },
+			    "extra": "token=__5_NT0ie9i8DBJamMFl8qHVjRvyP52eYGRy3oeZjBNSg__"
+			},
+			{
+			    "layers": "RELATIVE_HUMIDITY",
+			    "url": "https://donneespubliques.meteofrance.fr/inspire/services/ArpegeWMS",
+			    "name": "Isolignes et remplissage",
+			    "type": "wms",
+			    "parameters": { "token": "__5_NT0ie9i8DBJamMFl8qHVjRvyP52eYGRy3oeZjBNSg__",
+					    "styles": "HU__ISOBARIC__SHADING",
+					    "version": "1.3.0",
+					    "CRS": "EPSG:4326"
+					  },
+			    "extra": "token=__5_NT0ie9i8DBJamMFl8qHVjRvyP52eYGRy3oeZjBNSg__"
+			}
+		    ]
+		},
+		{
+		    "layers": "WIND",
+		    "url": "https://donneespubliques.meteofrance.fr/inspire/services/ArpegeWMS",
+		    "name": "Vent",
+		    "type": "wms",
+		    "parameters": { "token": "__5_NT0ie9i8DBJamMFl8qHVjRvyP52eYGRy3oeZjBNSg__",
+				    "styles": "UV__ISOBARIC__NO_SHADING",
+				    "version": "1.3.0",
+				    "CRS": "EPSG:4326"
+				  },
+		    "extra": "token=__5_NT0ie9i8DBJamMFl8qHVjRvyP52eYGRy3oeZjBNSg__"
+		},
+		{
+		    "layers": "PRESSURE_REDUCED_TO_MSL",
+		    "url": "https://donneespubliques.meteofrance.fr/inspire/services/ArpegeWMS",
+		    "name": "Pression réduite au niveau moyen de la mer",
+		    "type": "wms",
+		    "parameters": { "token": "__5_NT0ie9i8DBJamMFl8qHVjRvyP52eYGRy3oeZjBNSg__",
+				    "styles": "P__SEA__NO_SHADING",
+				    "version": "1.3.0",
+				    "CRS": "EPSG:4326"
+				  },
+		    "extra": "token=__5_NT0ie9i8DBJamMFl8qHVjRvyP52eYGRy3oeZjBNSg__"
+		},
+		{
+		    "type": "group",
+		    "name": "Température de l'air",
+		    "items": [
+			{
+			    "layers": "TEMPERATURE",
+			    "url": "https://donneespubliques.meteofrance.fr/inspire/services/ArpegeWMS",
+			    "name": "Isolignes",
+			    "type": "wms",
+			    "parameters": { "token": "__5_NT0ie9i8DBJamMFl8qHVjRvyP52eYGRy3oeZjBNSg__",
+					    "styles": "T__ISOBARIC__NO_SHADING",
+					    "version": "1.3.0",
+					    "CRS": "EPSG:4326"
+					  },
+			    "extra": "token=__5_NT0ie9i8DBJamMFl8qHVjRvyP52eYGRy3oeZjBNSg__"
+			},
+			{
+			    "layers": "TEMPERATURE",
+			    "url": "https://donneespubliques.meteofrance.fr/inspire/services/ArpegeWMS",
+			    "name": "Isolignes et remplissage",
+			    "type": "wms",
+			    "parameters": { "token": "__5_NT0ie9i8DBJamMFl8qHVjRvyP52eYGRy3oeZjBNSg__",
+					    "styles": "T__ISOBARIC__SHADING",
+					    "version": "1.3.0",
+					    "CRS": "EPSG:4326"
+					  },
+			    "extra": "token=__5_NT0ie9i8DBJamMFl8qHVjRvyP52eYGRy3oeZjBNSg__"
+			}
+		    ]
+		}
+	    ],
+	    "type": "group",
+	    "name": "Météo France"	    
+	}
+    ]
+}

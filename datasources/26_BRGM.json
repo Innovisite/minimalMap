@@ -1,0 +1,25 @@
+{
+    "catalog": [
+	{
+	    "type": "group",
+	    "name": "BRGM",
+	    "items": [
+		{
+		    "url": "http://geoservices.brgm.fr/geologie",
+		    "name": "Géologie",
+		    "type": "wms-getCapabilities"
+		},
+		{
+		    "url": "http://geoservices.brgm.fr/risques",
+		    "name": "Risques",
+		    "type": "wms-getCapabilities"
+		},
+		{
+		    "url": "http://geoservices.brgm.fr/odmgm",
+		    "name": "Observatoire des matériaux",
+		    "type": "wms-getCapabilities"
+		}
+	    ]
+	}
+    ]
+}

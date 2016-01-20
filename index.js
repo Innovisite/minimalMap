@@ -77,6 +77,7 @@ var SearchTabViewModel = require('terriajs/lib/ViewModels/SearchTabViewModel');
 var SettingsPanelViewModel = require('terriajs/lib/ViewModels/SettingsPanelViewModel');
 var SharePopupViewModel = require('terriajs/lib/ViewModels/SharePopupViewModel');
 var updateApplicationOnHashChange = require('terriajs/lib/ViewModels/updateApplicationOnHashChange');
+var updateApplicationOnMessageFromParentWindow = require('terriajs/lib/ViewModels/updateApplicationOnMessageFromParentWindow');
 
 var Terria = require('terriajs/lib/Models/Terria');
 var OgrCatalogItem = require('terriajs/lib/Models/OgrCatalogItem');
@@ -138,7 +139,11 @@ terria.start({
     // Automatically update Terria (load new catalogs, etc.) when the hash part of the URL changes.
     updateApplicationOnHashChange(terria, window);
 
+    updateApplicationOnMessageFromParentWindow(terria, window);
+
     // Create the map/globe.
+    terria.userProperties.mode = 'preview';
+
     TerriaViewer.create(terria, {
         developerAttribution: {
             text: 'Innovisite',
@@ -164,15 +169,6 @@ terria.start({
         baseMaps: allBaseMaps
     });
 
-    // Create the brand bar.
-    BrandBarViewModel.create({
-        container: ui,
-        elements: [
-            '<a target="_blank" href="about.html"><img src="images/InnovisiteLogoFlat.png" height="50" alt="Innovisite" title="Version: ' + version + '" /></a>',
-            '<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top"><input type="hidden" name="cmd" value="_s-xclick"><input type="hidden" name="hosted_button_id" value="5L3FE5HMXWVY8"><input type="image" src="images/donate120.png" border="0" name="submit" alt="PayPal, le réflexe sécurité pour payer en ligne"><img alt="" border="0" src="https://www.paypalobjects.com/fr_FR/i/scr/pixel.gif" width="1" height="1"></form>'
-        ]
-    });
-
     // Create the menu bar.
     MenuBarViewModel.create({
         container: ui,
@@ -181,63 +177,12 @@ terria.start({
             // Add a Tools menu that only appears when "tools=1" is present in the URL.
             createToolsMenuItem(terria, ui),
             new MenuBarItemViewModel({
-                label: 'Ajouter des données',
-                tooltip: 'Ajouter vos propres données sur la carte.',
-                svgPath: svgPlus,
-                svgPathWidth: 11,
-                svgPathHeight: 12,
-                callback: function() {
-                    AddDataPanelViewModel.open({
-                        container: ui,
-                        terria: terria
-                    });
-                }
-            }),
-            new MenuBarItemViewModel({
                 label: 'Fonds de carte',
                 tooltip: 'Changer le mode d\'affichage (2D/3D) et le fond de carte.',
                 svgPath: svgWorld,
                 svgPathWidth: 17,
                 svgPathHeight: 17,
                 observableToToggle: knockout.getObservable(settingsPanel, 'isVisible')
-            }),
-            new MenuBarItemViewModel({
-                label: 'Partager',
-                tooltip: 'Partager votre carte avec d\'autres personnes.',
-                svgPath: svgShare,
-                svgPathWidth: 11,
-                svgPathHeight: 13,
-                callback: function() {
-                    SharePopupViewModel.open({
-                        container: ui,
-                        terria: terria,
-			rapanuiKey: configuration.rapanuiKey
-                    });
-                }
-            }),
-            new MenuBarItemViewModel({
-                label: 'Autres cartes',
-                tooltip: 'Accéder à d\'autres environnment cartographique similaires.',
-                svgPath: svgRelated,
-                svgPathWidth: 14,
-                svgPathHeight: 13,
-                callback: function() {
-                    PopupMessageViewModel.open(ui, {
-                        title: 'Autres cartes',
-                        message: require('fs').readFileSync(__dirname + '/lib/Views/RelatedMaps.html', 'utf8'),
-                        width: 600,
-                        height: 430
-                    });
-                }
-            }),
-            new MenuBarItemViewModel({
-                label: 'A-propos',
-                tooltip: 'A-propos d\'Innovisite.',
-                svgPath: svgInfo,
-                svgPathWidth: 18,
-                svgPathHeight: 18,
-                svgFillRule: 'evenodd',
-                href: 'about.html'
             })
         ]
     });
@@ -252,6 +197,7 @@ terria.start({
     DistanceLegendViewModel.create({
         container: ui,
         terria: terria,
+	legendWidth: 100,
         mapElement: document.getElementById('cesiumContainer')
     });
 
@@ -284,7 +230,7 @@ terria.start({
         container: ui,
         terria: terria,
         mapElementToDisplace: 'cesiumContainer',
-        isOpen: !isSmallScreen && !terria.userProperties.hideExplorerPanel,
+        isOpen: false,
         tabs: [
             new DataCatalogTabViewModel({
                 catalog: terria.catalog

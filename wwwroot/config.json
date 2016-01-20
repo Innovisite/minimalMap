@@ -1,29 +1,7 @@
 {
     "proxyDomains" : [
-	"www.data.gouv.fr",
-	"services.vuduciel.loire-atlantique.fr",
-	"portail-sig.ville-larochelle.fr",
-	"download.data.grandlyon.com",
-	"wms.craig.fr",
-	"ids.craig.fr",
-	"carto.georhonealpes.fr",
-	"data.enseignementsup-recherche.gouv.fr",
-	"opendata.nicecotedazur.org",
-	"data.bordeaux-metropole.fr",
-	"donneespubliques.meteofrance.fr",
-	"geobretagne.fr",
-	"ows.region-bretagne.fr",
-	"geo.brest-metropole.fr",
-	"extranet.parcnational.fr",
-	"datacarto.geobourgogne.fr",
-	"ids.pigma.org",
-	"geoservices.brgm.fr",
-	"services.sandre.eaufrance.fr",
-	"gesteau.oieau.fr",
-	"carto.atlasante.fr"
     ],
     "initializationUrls" : [
-        "nm"
     ],
     "parameters": {
         "bingMapsKey": "AmVxlziFcoHT5hS-E1et4XZIG7vCfxxeVHH-SXlIqWLRPn649RLdlJWxjfIRuE6_",
@@ -32,7 +10,7 @@
         "googleAnalyticsKey": "UA-56352870-1",
         "googleAnalyticsOptions": null,
         "disclaimer": {
-            "text": "Avertissement: Innovisite n'est pas dédié à la navigation et n'est pas responsable de la précision des données.",
+            "text": "",
             "url": "about.html"
         }
     }
